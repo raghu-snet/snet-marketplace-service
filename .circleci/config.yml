@@ -60,7 +60,7 @@ jobs:
       - run:
           name: Run unit tests and integration test
           command: |
-            PYTHONPATH=$PWD python -m coverage run -m pytest */testcases/integration_testcases/*.py */testcases/unit_testcases/*.py */testcases/unit_testcases/*/*.py */testcases/functional_testcases/*.py
+            PYTHONPATH=$PWD python -m coverage run -m pytest */testcases/integration_testcases/*.py */testcases/unit_testcases/*.py */testcases/unit_testcases/*/*.py */testcases/functional_testcases/*.py --omit=__init__.py,config.py
             python -m coverage report -m
             python -m coverage xml
             export SONAR_SCANNER_OPTS="-Xmx2048m"
